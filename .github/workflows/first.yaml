@@ -1,6 +1,9 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing GitHub Actions
-on: [push]
+on:
+  push:
+    branches:
+      - main
 jobs: 
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -16,7 +19,8 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "Job's status is ${{ job.status }}"
-  Second-step:
+  another-job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "another job to run"
+      - run: echo "${{ github.job }}
+
