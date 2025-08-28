@@ -23,6 +23,8 @@ jobs:
   another-job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github.job }}"
-      - run: echo "${{ github.path }}"
+      - name: show github job
+        run: echo "${{ github.job }}"
+      - name: show runner path
+        run: echo "${{ github.path }}"
 
